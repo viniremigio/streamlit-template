@@ -1,12 +1,7 @@
 import duckdb
 from loguru import logger
 
-pl_duck = duckdb.connect('data/pl.duck.db')
-
-pl_duck.sql("INSTALL httpfs")
-pl_duck.sql("LOAD httpfs")
-
-allowed = False
+pl_duck = duckdb.connect("data/pl.duck.db")
 
 logger.info("Load duckdb table")
 
