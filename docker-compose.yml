@@ -1,0 +1,20 @@
+services:
+
+  streamlit:
+    build: .
+    container_name: streamlit-template
+
+    volumes:
+      - ./src:/app/src
+      - ./img:/app/img
+      - ./data:/app/data
+
+    ports:
+      - '8501:8501'
+
+    networks:
+      - data-network
+
+networks:
+  data-network:
+    external: true
